@@ -1,7 +1,9 @@
 # BTArobot
 
 ***Need to touch up the Readme file***
+
 Last updated 1/29/2020
+
 Below is a brief explanation of each subdirectory.
 
 *Documentation
