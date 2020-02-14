@@ -1,0 +1,69 @@
+Into:
+  SLAM: Simultaneous localization and mapping
+    SLAM is the thought process that robots use to navigate the world around them.
+    The robot uses SLAM to look for and remember where things are around itself.
+    Then uses that information to figure out where it is in relation to those things.
+  ROS: Robot Operating System
+    ROS is the medium by which SLAM operates and uses the sensors of the robot.
+
+Step 1: The Virtual Machine
+  ROS and SLAM run on a Linux operating system called Ubuntu.
+  Unless we want to completely wipe out the existing OS it would be a good idea to use a virtual machine instead.
+  A virtual machine is like a small computer within a computer, so that the small computer won't affect the outer computer.
+  We will be using Oracle VM VirtualBox.
+  VirtualBox can be found at: https://www.virtualbox.org/
+
+Step 2: Ubuntu 16.04
+  Now that a virtual machine software has been downloaded we can install Ubuntu.
+  Yet we can't just install any version of Ubuntu.
+  ROS and SLAM run on Ubuntu version 16.04, other versions can cause errors in the software.
+  Ubuntu 16.04 can be fount at: http://releases.ubuntu.com/xenial/
+  The image we want is the desktop image, 64-bit (AMD64) desktop image.
+
+Step 3: Making the virtual machine
+  Now that we have both a Virtual Machine maker and an image for an operating system it is time to make the virtual machine.
+  Open up VirtualBox and click new.
+  Name the machine whatever fancies you.
+  Within type section select Linux
+  Under version select Ubuntu (64-bit)
+  Click next
+  It is a decent idea to allocate half of the available memory for the virtual Machine
+  We need to make a virtual hard disk so we can just click next
+  We have downloaded an Ubuntu disk image so we can click next one again
+  Now we have to decide if we want to have dynamically allocated or fixed size hard disk
+    dynamically allocated hard disk grows bigger as we add stuff, this is good for space limited users
+    fixed size predetermines how much space exists for the virtual machine, no more no less, good for performance
+  Now we determine the max hard disk, around 16 GB is good but not necessary
+    if you selected dynamically allocated in the last page the file will start small and then grow as we add software until it is the selected size
+    if you selected fixed size the virtual machine will start out as the selected size
+  Click create
+  we now have an empty virtual machine, to get Ubuntu on this virtual machine we need to add it.
+  select the VirtualBox on the left and then the settings gear.
+  from the settings, select storage and then the + 'optical' next to Controller: IDE
+  click add, and navigate to and select the Ubuntu 16.04 image we downloaded and click Open
+  once added select and then press choose.
+  Now we start the VirtualBox and run through the on screen installation instructions for Ubuntu.
+Step 4: Prep work
+  There are two ways to install all the required software for ROS.
+  The automatic way
+    on the terminal type in these lines
+      $ sudo apt-get update
+      $ sudo apt-get upgrade
+      $ wget https://raw.githubusercontent.com/ROBOTIS-GIT/robotis_tools/master/install_ros_kinetic.sh && chmod 755 ./install_ros_kinetic.sh && bash ./install_ros_kinetic.sh
+  then there is the manual way
+    
+Step 5: building the Simulation with gazebo
+  notes:
+    $ cd ~/catkin_ws/src/
+    $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+    $ cd ~/catkin_ws && catkin_make
+    adds gazebo makes Simulation
+    nano ~/.bashrc
+    opens bash config file
+    add to bottom of file
+      export TURTLEBOT3_MODEL=waffle
+    sets default sim model to waffle (used because most similar to rumba)
+    cntl x 
+    to save pres y then enter
+    
+
