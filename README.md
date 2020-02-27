@@ -15,6 +15,7 @@ In this folder there are tutorials for how to start up your own similar project 
 
 **References:**
 A bibliography as well as links to other texts and resources that were utilized
+***Need to rename pdfs to something other than numbers***
 
 **Project:**
 Project files and directories used in the project
