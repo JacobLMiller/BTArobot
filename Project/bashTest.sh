@@ -1,11 +1,16 @@
 #!/bin/bash
 
-echo "Hello, World!"
-clear
-echo "Alright, let's try some input. Enter a noun."
-read noun
-echo "Enter a verb."
-read verb
-echo "And finally, a descriptive adjective."
-read adjective
-echo "I prefer $noun $adjective , and with extra $verb"
+working=true
+while($working)
+do
+  #sleep 15
+  i=$((i+1))
+  ((i=i+1))
+  let "i=i+1"
+  sleep 5
+
+  if [ $i -ge 1 ]; then
+    working=false
+    echo "I have successfully counted to 5."
+  fi
+done
